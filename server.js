@@ -11,11 +11,11 @@ app.use(express.json());
 app.use(cors());
 
 const db = mysql.createPool({
-  host: "localhost",
+  host: "sql6.freemysqlhosting.net",
   port: 3306,
-  user: "root",
-  password: "Kpking@900",
-  database: "orivehrm",
+  user: "sql6679486",
+  password: "cPIhAlzZpb",
+  database: "sql6679486",
 });
 
 const JWT_SECRET = process.env.JWT_SECRET || "default-secret-key";
@@ -37,7 +37,6 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  res.send("working");
   const { username, password } = req.body;
   console.log(username, password);
   let user_email_or_name = username;
