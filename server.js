@@ -143,6 +143,7 @@ app.post("/register", async (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
+  res.send("working)
   const { username, password } = req.body;
   console.log(username, password);
   let user_email_or_name = username;
