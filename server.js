@@ -183,6 +183,10 @@ app.post("/login", async (req, res) => {
   }
 });
 
+app.get("/login/greet",(req,res) => {
+  res.send("working")
+})
+
 const PORT = process.env.PORT || 3010;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
