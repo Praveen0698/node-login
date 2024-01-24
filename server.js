@@ -42,7 +42,7 @@ app.post("/login", async (req, res) => {
   let user_email_or_name = username;
   try {
     const [results] = await db.execute(
-      "SELECT * FROM employees WHERE user_email_or_name = ?",
+      "SELECT * FROM employees WHERE username = ?",
       [user_email_or_name]
     );
 
