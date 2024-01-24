@@ -38,7 +38,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  //res.send(username);
+  console.log(username);
   let user_email_or_name = username;
   try {
     const [results] = await db.execute(
