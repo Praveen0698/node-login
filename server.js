@@ -1,110 +1,4 @@
-// const server = require("express");
-// const cors = require("cors");
-// const app = server();
-// const data = require("./schema");
-// const pathData = require("path");
-// const multer = require("multer");
 
-// app.use(server.json());
-// app.use(cors());
-// app.use(server.static("public"));
-
-// const storage = multer.diskStorage({
-//   destination: (req, res, cb) => {
-//     cb(null, "public/Images");
-//   },
-//   filename: (req, file, cb) => {
-//     cb(
-//       null,
-//       file.fieldname + "_" + Date.now() + pathData.extname(file.originalname)
-//     );
-//   },
-// });
-
-// const upload = multer({
-//   storage: storage,
-// });
-
-// app.post("/organisation/company", upload.single("file"), (req, res) => {
-//   data
-//     .create({
-//       companyName: req.body.companyName,
-//       companyType: req.body.companyType,
-//       trendingName: req.body.trendingName,
-//       cin: req.body.cin,
-//       number: req.body.contactNumber,
-//       email: req.body.email,
-//       website: req.body.website,
-//       gst: req.body.gst,
-//       uan: req.body.uan,
-//       address: req.body.address,
-//       file: req.file.filename,
-//     })
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//     });
-// });
-
-// app.delete("/company/delete/:id", (req, res) => {
-//   var uid = req.params.id;
-
-//   data.deleteOne({ _id: uid }).then((result) => {});
-// });
-
-// app.get("/organisation/company", (req, res) => {
-//   data
-//     .find({})
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => {
-//       res.json(err);
-//     });
-// });
-
-// app.get("/company/get/:id", (req, res) => {
-//   data
-//     .findOne({ _id: req.params.id })
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => {
-//       res.json(err);
-//     });
-// });
-
-// app.put("/company/update/:id", (req, res) => {
-//   data
-//     .updateMany({
-//       companyName: req.body.companyName,
-//       number: req.body.contactNumber,
-//       email: req.body.email,
-//       gst: req.body.gst,
-//       uan: req.body.uan,
-//       cin: req.body.cin,
-//     })
-//     .then((result) => {
-//       res.json(result);
-//     })
-//     .catch((err) => res.json(err));
-// });
-
-// app.listen(3500, () => {
-//   console.log("started");
-// });
-
-// const express = require("express");
-// const cors = require("cors");
-// const app = express();
-
-// app.use(express.json());
-// app.use(cors());
-// app.use(express.static("public"));
-
-// module.exports = app;
 
 const express = require("express");
 const jwt = require("jsonwebtoken");
@@ -185,6 +79,10 @@ app.post("/login", async (req, res) => {
 
 app.get("/login/greet",(req,res) => {
   res.send("working")
+})
+
+app.get("/login/welcome",(req,res) => {
+  res.send("welcome")
 })
 
 const PORT = process.env.PORT || 8000;
